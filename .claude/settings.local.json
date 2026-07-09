@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(mkdir -p \"C:\\\\vibe-code\\\\musa-resume\\\\public\" && cp \"C:\\\\Users\\\\musay\\\\OneDrive\\\\Documents\\\\Musayyab CV\\\\Musayyab CV.pdf\" \"C:\\\\vibe-code\\\\musa-resume\\\\public\\\\Musayyab-CV.pdf\" && ls \"C:\\\\vibe-code\\\\musa-resume\\\\public\")",
+      "Bash(npm run *)"
+    ]
+  }
+}
