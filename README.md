@@ -1,29 +1,47 @@
-# Muhammad Musayyab — Portfolio
+# The Infrastructure Journey
 
-Personal portfolio / resume website. Dark, futuristic single-pager with GSAP scroll animations and a Three.js particle/wireframe background.
+Portfolio site for **Muhammad Musayyab — DevOps Engineer**. A cinematic, scroll-driven
+walkthrough of an imaginary data center where every room maps to real CV content:
+Linux foundations, containers, CI/CD, infrastructure-as-code, monitoring, data
+engineering, and shipped projects.
+
+The signature move: **everything materializes from blueprint to solid** — teal
+schematic lines resolving into lit geometry as you scroll, the visual metaphor for
+infrastructure-as-code.
+
+Full spec: [`Infrastructure_Journey_Build_Plan.md`](./Infrastructure_Journey_Build_Plan.md)
 
 ## Stack
 
-- [Vite](https://vitejs.dev/) — dev server & build
-- [GSAP + ScrollTrigger](https://gsap.com/) — scroll & interaction animations
-- [Three.js](https://threejs.org/) — 3D background (starfield, torus knot, icosahedron)
-- Vanilla HTML/CSS/JS — no framework
+- Vite + React + TypeScript + Tailwind CSS v4
+- React Three Fiber + drei (3D layer, primitive geometry only — no model assets)
+- GSAP ScrollTrigger (camera rig + room beats) + Lenis (scroll smoothing, never hijacking)
+- Zustand (stage/quality state), @react-three/postprocessing (Bloom + Vignette)
+- Fonts: Departure Mono (display/system labels) + Instrument Sans (body)
 
 ## Develop
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
+npm run dev       # dev server
+npm run build     # typecheck + production build to dist/
+npm run preview   # serve the production build
 ```
 
-## Build & deploy
+## Guardrails built in
 
-```bash
-npm run build    # outputs to dist/
-```
-
-Deploys to Vercel with zero config — import the repo, framework preset "Vite".
+- `prefers-reduced-motion`: no 3D canvas, no camera flight — static schematic backdrop, all content readable
+- No-WebGL / context-loss fallback to the same static backdrop
+- `PerformanceMonitor` drops DPR and postprocessing on sustained FPS decline
+- Every fact exists as real DOM text (screen readers, SEO); the 3D layer is atmosphere only
+- 3D chunk is lazy-loaded after first paint so the hero terminal appears immediately
 
 ## Content
 
-Site content is sourced from `content-structure.md` (derived from the CV). The downloadable resume lives at `public/Musayyab-CV.pdf` — replace that file to update it.
+All CV facts live in one file: `src/content/cv.ts`. Update it there — rooms,
+project cards, and the comms deck all read from it.
+
+## Deploy
+
+Static SPA — `npm run build`, deploy `dist/` to Vercel or Netlify. The resume PDF
+is served from `public/Musayyab-CV.pdf`.

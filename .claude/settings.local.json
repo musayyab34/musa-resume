@@ -4,7 +4,25 @@
       "Bash(npm --version)",
       "Bash(npm install *)",
       "Bash(mkdir -p \"C:\\\\vibe-code\\\\musa-resume\\\\public\" && cp \"C:\\\\Users\\\\musay\\\\OneDrive\\\\Documents\\\\Musayyab CV\\\\Musayyab CV.pdf\" \"C:\\\\vibe-code\\\\musa-resume\\\\public\\\\Musayyab-CV.pdf\" && ls \"C:\\\\vibe-code\\\\musa-resume\\\\public\")",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(npm view *)",
+      "Bash(npx tsc *)",
+      "Read(//home/musa/.cache/**)",
+      "Bash(npx playwright *)",
+      "Bash(npm init *)",
+      "Bash(npm i *)",
+      "Bash(node shoot.mjs)",
+      "Bash(sudo -n true)",
+      "Bash(curl -s http://archive.ubuntu.com/ubuntu/pool/main/n/nss/)",
+      "Bash(curl -sO http://archive.ubuntu.com/ubuntu/pool/main/n/nss/libnss3_3.98-0ubuntu0.22.04.4_amd64.deb)",
+      "Bash(dpkg -x libnss3_3.98-0ubuntu0.22.04.4_amd64.deb extracted)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4173/)",
+      "Bash(sed -i 's/maxEmissive: 0.16/maxEmissive: 0.05/g' src/scene/rooms/ContainerBay.tsx)",
+      "Bash(sed -i 's/maxEmissive: 0.3 }/maxEmissive: 0.08 }/; s/maxEmissive: 0.45,/maxEmissive: 0.1,/; s/maxEmissive: 0.9,/maxEmissive: 0.22,/' src/scene/rooms/IacControlRoom.tsx)",
+      "Bash(sed -i 's/maxEmissive: 0.22,/maxEmissive: 0.06,/' src/scene/rooms/ProjectsHangar.tsx)",
+      "Bash(disown)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)",
+      "Bash(git add *)"
     ]
   }
 }

@@ -1,0 +1,100 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/instrument-sans';
+
+/* ---------------------------------------------------------------------------
+   Design tokens — Section 2 of the project brief.
+   Data-center lighting vocabulary: cool ambient LED, amber status lights,
+   one reserved red. Amber = "this matters". Teal = ambient/atmospheric.
+   They never appear at full saturation together in the same shot.
+--------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Departure Mono';
+  src: url('/fonts/DepartureMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --void: #080a10;
+  --rack-steel: #151922;
+  --rack-steel-light: #232936;
+  --signal-amber: #ffb454;
+  --circuit-teal: #4fd1c5;
+  --alert-red: #ff5c5c;
+  --bone: #e8e6de;
+  --bone-dim: #9aa0ac;
+}
+
+@theme {
+  --color-void: var(--void);
+  --color-rack-steel: var(--rack-steel);
+  --color-rack-steel-light: var(--rack-steel-light);
+  --color-signal-amber: var(--signal-amber);
+  --color-circuit-teal: var(--circuit-teal);
+  --color-alert-red: var(--alert-red);
+  --color-bone: var(--bone);
+  --color-bone-dim: var(--bone-dim);
+
+  --font-mono: 'Departure Mono', ui-monospace, 'Cascadia Mono', monospace;
+  --font-sans: 'Instrument Sans Variable', 'Instrument Sans', system-ui, sans-serif;
+}
+
+html {
+  background: var(--void);
+  color-scheme: dark;
+  scrollbar-color: var(--rack-steel-light) var(--void);
+}
+
+body {
+  background: var(--void);
+  color: var(--bone);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--signal-amber);
+  color: var(--void);
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal-amber);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* System/UI label — small mono, uppercase, letter-spaced, like a status readout */
+.sys-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Blinking terminal cursor */
+.cursor-blink {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--signal-amber);
+  animation: blink 1.06s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink { animation: none; }
+  html { scroll-behavior: auto; }
+}
