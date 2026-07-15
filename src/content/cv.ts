@@ -13,9 +13,7 @@ export const identity = {
   location: 'Islamabad, Pakistan',
   thesis: 'I make deployments less stressful.',
   email: 'itsmusayyab@gmail.com',
-  phone: '+92 336 5988565',
   linkedin: 'https://www.linkedin.com/in/musayyabmuhammad/',
-  resumePdf: '/Musayyab-CV.pdf',
 } as const
 
 /** Hero boot sequence — typed out line by line. */

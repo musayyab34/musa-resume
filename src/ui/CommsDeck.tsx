@@ -4,7 +4,7 @@ import { prefersReducedMotion } from '../store/journeyStore'
 
 /**
  * Exit — Comms Deck. A functional room, not a spectacle one:
- * secure-channel beat, then contact, resume, the employment record,
+ * secure-channel beat, then contact, the employment record,
  * and a compact system inventory.
  */
 export default function CommsDeck() {
@@ -54,13 +54,6 @@ export default function CommsDeck() {
               {identity.email}
             </a>
             <a
-              href={identity.resumePdf}
-              download
-              className="rounded-sm border border-rack-steel-light px-5 py-3 font-mono text-sm text-bone transition-colors duration-200 hover:border-signal-amber/70"
-            >
-              Download resume (PDF)
-            </a>
-            <a
               href={identity.linkedin}
               target="_blank"
               rel="noreferrer"
@@ -101,7 +94,7 @@ export default function CommsDeck() {
             <p className="sys-label text-bone-dim/70">
               © 2026 {identity.name} · {identity.location}
             </p>
-            <p className="sys-label text-bone-dim/70">tel {identity.phone} · built with Claude Code</p>
+            <p className="sys-label text-bone-dim/70">built with Claude Code</p>
           </footer>
         </div>
       </div>

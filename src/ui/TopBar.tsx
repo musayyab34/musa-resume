@@ -18,13 +18,6 @@ export default function TopBar() {
         </button>
 
         <div className="pointer-events-auto flex items-center gap-3">
-          <a
-            href={identity.resumePdf}
-            download
-            className="sys-label rounded-sm border border-rack-steel-light px-3 py-2 text-bone transition-colors duration-200 hover:border-signal-amber/70"
-          >
-            Resume ↓
-          </a>
           <button
             type="button"
             onClick={() => scrollToId('comms')}

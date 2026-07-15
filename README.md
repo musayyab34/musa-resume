@@ -43,5 +43,4 @@ project cards, and the comms deck all read from it.
 
 ## Deploy
 
-Static SPA — `npm run build`, deploy `dist/` to Vercel or Netlify. The resume PDF
-is served from `public/Musayyab-CV.pdf`.
+Static SPA — `npm run build`, deploy `dist/` to Vercel or Netlify.
